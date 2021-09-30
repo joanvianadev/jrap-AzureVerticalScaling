@@ -22,7 +22,7 @@
                 {
                     "type": "runbooks",
                     "apiVersion": "2015-01-01-preview",
-                    "name": "ScaleAppServicePlansDown",
+                    "name": "ScaleAppServicePlansDown_Free",
                     "location": "[resourceGroup().location]",
                     "dependsOn": [
                         "[concat('Microsoft.Automation/automationAccounts/', parameters('automationAccountName'))]"
@@ -33,7 +33,26 @@
                         "logVerbose": "false",
                         "description": "Scale down App Service Plans by subscription, by resource group or by specific App Service Plan. Scales down to FREE tier.",
                         "publishContentLink": {
-                            "uri": "https://raw.githubusercontent.com/jraps20/jrap-AzureVerticalScaling/master/Scripts/ScaleDownAppServicePlans.ps1",
+                            "uri": "https://raw.githubusercontent.com/jraps20/jrap-AzureVerticalScaling/master/Scripts/ScaleDown_Free_AppServicePlans.ps1",
+                            "version": "1.0.0.0"
+                        }
+                    }
+                },
+                {
+                    "type": "runbooks",
+                    "apiVersion": "2015-01-01-preview",
+                    "name": "ScaleAppServicePlansDown_B1",
+                    "location": "[resourceGroup().location]",
+                    "dependsOn": [
+                        "[concat('Microsoft.Automation/automationAccounts/', parameters('automationAccountName'))]"
+                    ],
+                    "properties": {
+                        "runbookType": "PowerShell",
+                        "logProgress": "false",
+                        "logVerbose": "false",
+                        "description": "Scale down App Service Plans by subscription, by resource group or by specific App Service Plan. Scales down to B1 tier.",
+                        "publishContentLink": {
+                            "uri": "https://raw.githubusercontent.com/jraps20/jrap-AzureVerticalScaling/master/Scripts/ScaleDown_B1_AppServicePlans.ps1",
                             "version": "1.0.0.0"
                         }
                     }
