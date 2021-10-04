@@ -213,9 +213,9 @@ foreach($rgName in $resourceGroupNames){
 
         Write-Output "--- --- --- Finished checking for App Services with Tier-specific settings"
 
-        Write-Output "--- --- --- Converting '$aSPName' to Free Tier..."
+        Write-Output "--- --- --- Converting '$aSPName' to B1 Tier..."
         Set-AzAppServicePlan -ResourceGroupName "$rgName" -Name $aSPName -Tier "B1" | out-null
-        Write-Output "--- --- --- Finished converting '$aSPName' App Service Plan to Free Tier"
+        Write-Output "--- --- --- Finished converting '$aSPName' App Service Plan to B1 Tier"
     }
 
     Write-Output "--- Finished processing '$rgName' Resource Group"
