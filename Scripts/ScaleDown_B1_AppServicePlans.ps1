@@ -214,7 +214,7 @@ foreach($rgName in $resourceGroupNames){
         Write-Output "--- --- --- Finished checking for App Services with Tier-specific settings"
 
         Write-Output "--- --- --- Converting '$aSPName' to B1 Tier..."
-        Set-AzAppServicePlan -ResourceGroupName "$rgName" -Name $aSPName -Tier "B1" | out-null
+        Set-AzAppServicePlan -ResourceGroupName "$rgName" -Name $aSPName -Tier "Basic" -WorkerSize "Small" | out-null
         Write-Output "--- --- --- Finished converting '$aSPName' App Service Plan to B1 Tier"
     }
 
